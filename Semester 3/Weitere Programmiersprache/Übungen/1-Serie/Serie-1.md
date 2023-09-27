@@ -15,4 +15,4 @@ Das `:t` gibt den Typ des dahinter stehenden Ausdrucks zurück.
 1. `4 - 2`
 2. `4 + 2`
 3. `4 ^ 2`: Auf der rechten Seite darf keine Kommazahl stehen.
-4.  
+4.

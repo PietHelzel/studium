@@ -33,3 +33,4 @@ Wort
 
 Formale Sprache
 : Eine Formale Sprache über $\Sigma$ ist eine Teilmenge L von $\Sigma^*$.
+: Sprachen können auch konkateniert werden, wobei die neuen Wörter über das kartesiche Produkt erschaffen werden.
