@@ -106,7 +106,7 @@ add = (\x y -> x + y)
 5
 
 addFour = add 4
-> addFour 1
+-- > addFour 1
 5
 
 -- Variante 1: Definition der Argumente als Tupel
