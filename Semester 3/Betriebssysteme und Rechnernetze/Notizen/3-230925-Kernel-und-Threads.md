@@ -13,6 +13,10 @@ Kernel
 : Das Kernel ist eine Kernkomponente eines OS. Es besteht aus spezifisches Bibliotheken, die
 : die Kernfunktionen eines OS realisieren.
 
+Das Kernel ist
+- essentiell: Alle anderen Komponenten des OS benötigen diese Funktionalität.
+- elementar: Die Funktionen sind sehr grundlegend ("low-level") und werden zum Implementieren von "higher-level"-Funktionen verwendet.
+
 ### Wichtigste Funktionen eines Kernels:
 
 1. File Management
@@ -44,6 +48,7 @@ Alle Prozesse außerhalb des eigentlichen OS laufen im User-Space, aber auch OS-
 Auch die User-Interfaces für Applikationen seitens des OS laufen im User-Space.
 Diese Segregation geschieht durch unterschiedliche Adressbereiche.
 Prozesse im Kernel-Space sind priviligierter als die im User-Space.
+Das Kernel ist nur eine von mehreren Komponenten im KAS.
 
 ### Aufruf eines OS-Service
 
