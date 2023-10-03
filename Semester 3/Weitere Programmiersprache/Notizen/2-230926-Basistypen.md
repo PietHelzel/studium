@@ -117,8 +117,9 @@ v2 :: Int -> Int -> Int
 ```
 
 #### Currying
-: Haskell betrachtet v2 als Funktion, die einen Int nimmt, und eine Funktion zurückgibt, die einen Int auf einen Int abbildet.
-: Funktionstypen sind implizit **rechtsgeklammert**! Also gilt `Int -> Int -> Int` entspricht `Int -> (Int -> Int)`.   
+
+- Haskell betrachtet v2 als Funktion, die einen Int nimmt, und eine Funktion zurückgibt, die einen Int auf einen Int abbildet.
+- Funktionstypen sind implizit **rechtsgeklammert**! Also gilt `Int -> Int -> Int` entspricht `Int -> (Int -> Int)`.   
 
 ```haskell
 -- > :t curry v1
