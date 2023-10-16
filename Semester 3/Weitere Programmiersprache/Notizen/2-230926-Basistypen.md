@@ -38,6 +38,8 @@ Die Typklasse Eq fasst alle Typen zusammen, deren Werte auf Gleichheit überprü
 Nulltupel
 : Das Nulltupel wird `()`  geschrieben und ist ein leeres Tupel. Typ und Wert sind dabei gleich.
 
+Tupel mit einem Element sind nicht erlaubt!
+
 ## Listen
 
 ```haskell
