@@ -1,5 +1,7 @@
 module Serie4 where
 
+import Data.List
+
 testDoubles :: String -> Bool
 testDoubles a = testDoubles2 (words a)
 
@@ -8,9 +10,16 @@ testDoubles2 [] = False
 testDoubles2 [x] = False
 testDoubles2 [x, y] = x == y
 testDoubles2 a =
-    if head a == a!!1 then True
-    else testDoubles2 (tail a)
+  (head a == a !! 1) || testDoubles2 (tail a)
 
 listDoubles :: String -> [String]
-listDoubles a = let w = words a in
-    [w!!x | x <- [0..((length w) - 1)], w!!x == w!!(x+1)]
+listDoubles a = nub (listDoublesDup a) 
+
+listDoublesDup :: String -> [String]
+listDoublesDup [] = []
+listDoublesDup [a] = []
+listDoublesDup a =
+  let w = words a
+   in if head w `elem` tail w
+        then head w : listDoubles (unwords (tail w))
+        else listDoubles (unwords (tail w))
