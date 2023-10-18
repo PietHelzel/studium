@@ -1,13 +1,10 @@
 -- ===== Aufgabe 3 =====
 
 merge :: (Ord a) => [a] -> [a] -> [a]
-merge [] [] = []
 merge a [] = a
 merge [] a = a
-merge a b =
-  if head a <= head b
-    then head a : merge b (tail a)
-    else head b : merge a (tail b)
+merge (a:as) (b:bs) | a <= b = a : merge (b:bs) as
+                    | otherwise = b : merge (a:as) bs
 
 half :: [a] -> ([a], [a])
 half [] = ([], [])
@@ -62,8 +59,12 @@ isPrime a = sieve a [2..a]
 
 sieve :: (Integral a) => a -> [a] -> Bool
 sieve _ [] = False
-sieve a (x:xs) | a == x = True
-               | otherwise = sieve a (removeMultiples x xs)
+sieve a (x:xs) = a == x || sieve a (removeMultiples x xs)
 
 removeMultiples :: (Integral a) => a -> [a] -> [a]
 removeMultiples x xs = [a | a <- xs, mod a x /= 0]
+
+-- Alternative
+sieve' (x:xs) = x:sieve' [a | a <- xs, mod a x /= 0]
+allPrimes = sieve' [2..]
+isPrime' n = elem n (takeWhile (<=n) allPrimes)
