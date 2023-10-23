@@ -11,3 +11,14 @@ Dynamic Link Library (DLL)
 : Eine Windows Executable. Sie folgt der PE-Struktur (Portable Executable), der selben wie eine .exe-Datei.
 : Eine DLL exportiert Funktionen und Attributen die von anderen Executables verwendet werden können.
 : Windows biete viele wichtige Standart-DLLs (kernel32.dll, user32.dll, gdi32.dll).
+
+Windows API (Application Programming Interface)
+: Die user-mode Programmierinterfaces für Windows. Diese enthält tausende Aufrufbare Funktionen
+: z.B. für Networking, Grafik, Multimedia, etc.
+
+Process
+: **TODO!**
+
+Thread
+: Die ausführbare Basiseinheit, der vom OS Prozessorzeit zugeteilt wird.
+: Jeder Prozess startet mit einem Thread (*primary Thread*), kann aber weitere erstellen.
