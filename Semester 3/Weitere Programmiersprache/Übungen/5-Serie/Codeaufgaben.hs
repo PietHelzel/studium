@@ -1,5 +1,3 @@
-import Data.Char
-
 nospace :: String -> (String, Integer)
 nospace s = let noWhitespace = [x | x <- s, x /= ' ']
             in (noWhitespace, toInteger (length s - length noWhitespace))
@@ -19,13 +17,13 @@ multipleElems (x:xs) | elem x xs = x:multipleElems xs
 descending :: Ord a => [a] -> Bool
 descending [] = True
 descending [a] = True
-descending (x:xs) = x > head xs && descending xs
+descending (x:xs) = x >= head xs && descending xs
 
 myToLowerCase :: [Char] -> [Char]
 myToLowerCase = map myToLowerCaseH
 
 myToLowerCaseH :: Char -> Char
-myToLowerCaseH a | ord a >= 65 && ord a <= 90 = chr (ord a + 32)
+myToLowerCaseH a | fromEnum a >= 65 && fromEnum a <= 90 = toEnum (fromEnum a + 32)
                  | otherwise = a
 
 smallestSum :: [Integer] -> Integer

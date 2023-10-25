@@ -17,9 +17,8 @@ isMonotonousDeclining [a] = True
 isMonotonousDeclining (x:xs) = x >= head xs && isMonotonousDeclining xs
 
 isAlternating :: (Ord a, Num a) => [a] -> Bool
-isAlternating [] = False
-isAlternating [a] = False
-isAlternating [a, b] = signum a == -(signum b)
+isAlternating [] = True
+isAlternating [a] = True
 isAlternating (x:xs) = signum x == -(signum (head xs)) && isAlternating xs
 
 isConstant :: Eq a => [a] -> Bool
